@@ -1,0 +1,182 @@
+{
+  "id": "claw3d-intro",
+  "title": "Welcome to Claw3D",
+  "description": "A guided tour through Claw3D — the 3D workspace and visualization layer for AI agents powered by OpenClaw. Learn about the project vision, architecture, and how to contribute.",
+  "version": "1.0.0",
+  "audience": "New Users & AI Assistants",
+  "prerequisites": [
+    "Basic understanding of AI agents and automation",
+    "Familiarity with Node.js and web development concepts"
+  ],
+  "steps": [
+    {
+      "id": "step-1-overview",
+      "title": "Welcome to Claw3D",
+      "description": "Claw3D is an open-source 3D workspace that turns AI automation into a visual workplace. Agents collaborate, review code, run tests, and execute tasks inside a shared 3D environment — think of it as an office for your AI team.\n\nThis repository contains the visualization and interaction layer. OpenClaw provides the intelligence and task execution underneath.",
+      "estimatedTime": 30,
+      "focusDirectory": "",
+      "colorMode": "fileTypes",
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Click on README.md to see the full project overview",
+          "target": "README.md"
+        }
+      ]
+    },
+    {
+      "id": "step-2-vision-and-direction",
+      "title": "Vision & Direction",
+      "description": "The long-term vision for Claw3D is ambitious: a 3D city of AI agents where systems become spatially understandable, humans can interact with agent systems in real time, and collaboration between humans and AI becomes natural.\n\nVISION.md defines the guardrails and direction. ROADMAP.md captures near-term priorities like open-source readiness, runtime reliability, and office architecture clarity.",
+      "estimatedTime": 45,
+      "focusDirectory": "",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "vision-docs",
+          "name": "Vision & Direction",
+          "color": "#8b5cf6",
+          "items": [
+            { "path": "VISION.md", "type": "file" },
+            { "path": "ROADMAP.md", "type": "file" },
+            { "path": "CHANGELOG.md", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "fill"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Click on VISION.md to read about the long-term direction",
+          "target": "VISION.md"
+        }
+      ]
+    },
+    {
+      "id": "step-3-architecture",
+      "title": "System Architecture",
+      "description": "Claw3D is split into four main parts:\n\n1. Browser UI — Next.js client rendering the agents workspace, office, and builder\n2. Studio API routes — Server-side handling of local settings\n3. Studio WebSocket proxy — Forwards browser connections to the OpenClaw Gateway\n4. OpenClaw Gateway — The external system owning agent state, sessions, and runtime\n\nThe browser never connects directly to the gateway. Everything flows through the Studio proxy for security and deployment flexibility.",
+      "estimatedTime": 60,
+      "focusDirectory": "",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "architecture-docs",
+          "name": "Architecture Documentation",
+          "color": "#3b82f6",
+          "items": [
+            { "path": "ARCHITECTURE.md", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "fill"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Click on ARCHITECTURE.md for the full system design",
+          "target": "ARCHITECTURE.md"
+        }
+      ]
+    },
+    {
+      "id": "step-4-community-and-contributing",
+      "title": "Community & Contributing",
+      "description": "Claw3D is a community-driven project under the MIT license. Good first contributions include documentation fixes, focused unit tests, small UI polish, and replacing placeholder text.\n\nBefore contributing, run lint, typecheck, and tests. Keep PRs focused — one topic per PR. Security issues should be reported privately via SECURITY.md.",
+      "estimatedTime": 45,
+      "focusDirectory": "",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "community-docs",
+          "name": "Community & Contributing",
+          "color": "#10b981",
+          "items": [
+            { "path": "CONTRIBUTING.md", "type": "file" },
+            { "path": "CODE_OF_CONDUCT.MD", "type": "file" },
+            { "path": "SUPPORT.md", "type": "file" },
+            { "path": "SECURITY.md", "type": "file" },
+            { "path": "LICENSE", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "fill"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Click on CONTRIBUTING.md for setup and PR guidelines",
+          "target": "CONTRIBUTING.md"
+        }
+      ]
+    },
+    {
+      "id": "step-5-github-config",
+      "title": "GitHub Configuration",
+      "description": "The .github directory contains project infrastructure: code ownership rules, funding configuration, and issue templates for bug reports and feature requests.\n\nFeature requests include a compatibility check with OpenClaw — maintaining that integration is a core project guardrail.",
+      "estimatedTime": 30,
+      "focusDirectory": ".github",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "github-config",
+          "name": "GitHub Config",
+          "color": "#f59e0b",
+          "items": [
+            { "path": ".github", "type": "directory" },
+            { "path": ".github/CODEOWNERS", "type": "file" },
+            { "path": ".github/FUNDING.yml", "type": "file" },
+            { "path": ".github/ISSUE_TEMPLATE", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "hover-directory",
+          "description": "Hover over .github to see the project configuration files",
+          "target": ".github"
+        }
+      ]
+    },
+    {
+      "id": "step-6-whats-next",
+      "title": "What's Next",
+      "description": "You've explored the Claw3D project! Here's where to go from here:\n\n• README.md — Quick start guide and full project overview\n• ARCHITECTURE.md — System boundaries and data flow\n• ROADMAP.md — Current priorities and good first contributions\n• CONTRIBUTING.md — Local setup and PR expectations\n\nThe project is early-stage and actively evolving. Check GitHub Issues for current work and Discussions for questions. Welcome to the team!",
+      "estimatedTime": 20,
+      "focusDirectory": "",
+      "colorMode": "fileTypes",
+      "resources": [
+        {
+          "title": "Claw3D README",
+          "url": "README.md",
+          "type": "documentation"
+        },
+        {
+          "title": "Architecture Guide",
+          "url": "ARCHITECTURE.md",
+          "type": "documentation"
+        },
+        {
+          "title": "Contributing Guide",
+          "url": "CONTRIBUTING.md",
+          "type": "documentation"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "explore",
+          "description": "Explore the full codebase on your own"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "author": "Claw3D Community",
+    "createdAt": "2026-03-17",
+    "updatedAt": "2026-03-17",
+    "tags": ["onboarding", "architecture", "getting-started"]
+  }
+}

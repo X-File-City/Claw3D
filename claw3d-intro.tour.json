@@ -171,7 +171,7 @@
     {
       "id": "step-6-shared-libraries",
       "title": "Shared Libraries & Utilities",
-      "description": "Shared infrastructure in src/lib/ that connects the features.\n\noffice/ — State management, presence, standups, and event triggers.\n\ngateway/ — Gateway client and OpenClaw integration.\n\nThe security directory handles permission sandboxing.\n\nskills/, agents/, cron/ — Skill system, avatars, and scheduling.",
+      "description": "Shared infrastructure in src/lib/ that connects the features.\n\noffice/ — State management, presence, standups, and event triggers.\n\ngateway/ — Gateway client and OpenClaw integration.\n\nskills/, agents/, cron/ — Skill system, avatars, and scheduling.\n\nThe security directory handles permission sandboxing.",
       "estimatedTime": 45,
       "focusDirectory": "src/lib",
       "colorMode": "fileTypes",

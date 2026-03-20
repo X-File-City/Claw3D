@@ -1,18 +1,18 @@
 {
   "id": "claw3d-intro",
   "title": "Welcome to Claw3D",
-  "description": "A guided tour through Claw3D — the 3D workspace and visualization layer for AI agents powered by OpenClaw. Learn about the project vision, architecture, and how to contribute.",
-  "version": "1.0.0",
-  "audience": "New Users & AI Assistants",
+  "description": "A guided tour through Claw3D — the 3D workspace and visualization layer for AI agents powered by OpenClaw. Explore the real architecture: Next.js frontend, Phaser-powered 3D office, agent management, gateway proxy, and more.",
+  "version": "2.0.0",
+  "audience": "New Contributors & AI Assistants",
   "prerequisites": [
     "Basic understanding of AI agents and automation",
-    "Familiarity with Node.js and web development concepts"
+    "Familiarity with Next.js, React, and TypeScript"
   ],
   "steps": [
     {
       "id": "step-1-overview",
       "title": "Welcome to Claw3D",
-      "description": "Claw3D is an open-source 3D workspace that turns AI automation into a visual workplace. Agents collaborate, review code, run tests, and execute tasks inside a shared 3D environment — think of it as an office for your AI team.\n\nThis repository contains the visualization and interaction layer. OpenClaw provides the intelligence and task execution underneath.",
+      "description": "Claw3D is an open-source 3D workspace where AI agents collaborate visually. Agents review code, run tests, and execute tasks inside a shared 3D office environment — think of it as a virtual office for your AI team.\n\nThe project is a Next.js application with a Phaser-based 3D rendering engine, a WebSocket gateway proxy, and a rich agent management system. OpenClaw provides the intelligence underneath.",
       "estimatedTime": 30,
       "focusDirectory": "",
       "colorMode": "fileTypes",
@@ -25,109 +25,106 @@
       ]
     },
     {
-      "id": "step-2-vision-and-direction",
-      "title": "Vision & Direction",
-      "description": "The long-term vision for Claw3D is ambitious: a 3D city of AI agents where systems become spatially understandable, humans can interact with agent systems in real time, and collaboration between humans and AI becomes natural.\n\nVISION.md defines the guardrails and direction. ROADMAP.md captures near-term priorities like open-source readiness, runtime reliability, and office architecture clarity.",
+      "id": "step-2-app-shell",
+      "title": "Next.js Application Shell",
+      "description": "The app is built on Next.js with the App Router. The main entry points are:\n\n• page.tsx — Home screen and landing page\n• layout.tsx — Root layout wrapping the entire app\n• office/ — The 3D office workspace route\n• agents/ — Agent fleet management and settings\n• api/ — Server-side API routes for gateway, office, and studio\n\nThe [..invalid] catch-all route handles unknown paths gracefully.",
       "estimatedTime": 45,
-      "focusDirectory": "",
+      "focusDirectory": "src/app",
       "colorMode": "fileTypes",
       "highlightLayers": [
         {
-          "id": "vision-docs",
-          "name": "Vision & Direction",
-          "color": "#8b5cf6",
-          "items": [
-            { "path": "VISION.md", "type": "file" },
-            { "path": "ROADMAP.md", "type": "file" },
-            { "path": "CHANGELOG.md", "type": "file" }
-          ],
-          "opacity": 0.8,
-          "renderStrategy": "fill"
-        }
-      ],
-      "interactiveActions": [
-        {
-          "type": "click-file",
-          "description": "Click on VISION.md to read about the long-term direction",
-          "target": "VISION.md"
-        }
-      ]
-    },
-    {
-      "id": "step-3-architecture",
-      "title": "System Architecture",
-      "description": "Claw3D is split into four main parts:\n\n1. Browser UI — Next.js client rendering the agents workspace, office, and builder\n2. Studio API routes — Server-side handling of local settings\n3. Studio WebSocket proxy — Forwards browser connections to the OpenClaw Gateway\n4. OpenClaw Gateway — The external system owning agent state, sessions, and runtime\n\nThe browser never connects directly to the gateway. Everything flows through the Studio proxy for security and deployment flexibility.",
-      "estimatedTime": 60,
-      "focusDirectory": "",
-      "colorMode": "fileTypes",
-      "highlightLayers": [
-        {
-          "id": "architecture-docs",
-          "name": "Architecture Documentation",
+          "id": "app-entry-points",
+          "name": "Key Entry Points",
           "color": "#3b82f6",
           "items": [
-            { "path": "ARCHITECTURE.md", "type": "file" }
+            { "path": "src/app/page.tsx", "type": "file" },
+            { "path": "src/app/layout.tsx", "type": "file" },
+            { "path": "src/app/office", "type": "directory" },
+            { "path": "src/app/agents", "type": "directory" }
           ],
           "opacity": 0.8,
           "renderStrategy": "fill"
-        }
-      ],
-      "interactiveActions": [
+        },
         {
-          "type": "click-file",
-          "description": "Click on ARCHITECTURE.md for the full system design",
-          "target": "ARCHITECTURE.md"
-        }
-      ]
-    },
-    {
-      "id": "step-4-community-and-contributing",
-      "title": "Community & Contributing",
-      "description": "Claw3D is a community-driven project under the MIT license. Good first contributions include documentation fixes, focused unit tests, small UI polish, and replacing placeholder text.\n\nBefore contributing, run lint, typecheck, and tests. Keep PRs focused — one topic per PR. Security issues should be reported privately via SECURITY.md.",
-      "estimatedTime": 45,
-      "focusDirectory": "",
-      "colorMode": "fileTypes",
-      "highlightLayers": [
-        {
-          "id": "community-docs",
-          "name": "Community & Contributing",
-          "color": "#10b981",
-          "items": [
-            { "path": "CONTRIBUTING.md", "type": "file" },
-            { "path": "CODE_OF_CONDUCT.MD", "type": "file" },
-            { "path": "SUPPORT.md", "type": "file" },
-            { "path": "SECURITY.md", "type": "file" },
-            { "path": "LICENSE", "type": "file" }
-          ],
-          "opacity": 0.8,
-          "renderStrategy": "fill"
-        }
-      ],
-      "interactiveActions": [
-        {
-          "type": "click-file",
-          "description": "Click on CONTRIBUTING.md for setup and PR guidelines",
-          "target": "CONTRIBUTING.md"
-        }
-      ]
-    },
-    {
-      "id": "step-5-github-config",
-      "title": "GitHub Configuration",
-      "description": "The .github directory contains project infrastructure: code ownership rules, funding configuration, and issue templates for bug reports and feature requests.\n\nFeature requests include a compatibility check with OpenClaw — maintaining that integration is a core project guardrail.",
-      "estimatedTime": 30,
-      "focusDirectory": ".github",
-      "colorMode": "fileTypes",
-      "highlightLayers": [
-        {
-          "id": "github-config",
-          "name": "GitHub Config",
+          "id": "api-routes",
+          "name": "API Routes",
           "color": "#f59e0b",
           "items": [
-            { "path": ".github", "type": "directory" },
-            { "path": ".github/CODEOWNERS", "type": "file" },
-            { "path": ".github/FUNDING.yml", "type": "file" },
-            { "path": ".github/ISSUE_TEMPLATE", "type": "directory" }
+            { "path": "src/app/api", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Click on page.tsx to see the home screen",
+          "target": "src/app/page.tsx"
+        }
+      ]
+    },
+    {
+      "id": "step-3-agent-system",
+      "title": "Agent Management System",
+      "description": "The agent system is the heart of Claw3D. It handles the full lifecycle of AI agents:\n\n• components/ — UI for agent chat, creation, inspection, skills, and fleet sidebar\n• approvals/ — Execution approval workflows with control loops and pause policies\n• operations/ — Agent runtime operations\n• state/ — Agent state management\n• hooks/ — React hooks for agent interactions\n• creation/ — Agent provisioning and setup\n\nAgents communicate through the OpenClaw Gateway, with approvals ensuring human oversight of agent actions.",
+      "estimatedTime": 60,
+      "focusDirectory": "src/features/agents",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "agent-ui",
+          "name": "Agent UI Components",
+          "color": "#8b5cf6",
+          "items": [
+            { "path": "src/features/agents/components", "type": "directory" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "fill"
+        },
+        {
+          "id": "agent-approvals",
+          "name": "Approval System",
+          "color": "#ef4444",
+          "items": [
+            { "path": "src/features/agents/approvals", "type": "directory" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "fill"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "hover-directory",
+          "description": "Hover over the approvals directory to see the execution approval workflows",
+          "target": "src/features/agents/approvals"
+        }
+      ]
+    },
+    {
+      "id": "step-4-3d-office",
+      "title": "The 3D Office",
+      "description": "The visual centerpiece: a Phaser-powered 3D office where agents sit at desks, collaborate, and work. The office system includes:\n\n• phaser/ — Rendering engine with scenes, objects, overlays, and navigation systems\n• components/ — Office UI panels: analytics, inbox, history, playbooks, skills marketplace, and settings\n• hooks/ — Office-specific logic like standup controllers and usage analytics\n• retro-office/ — The retro-themed 3D variant with furniture geometry, desk navigation routes, and persistence\n\n3D furniture models (desks, chairs, computers, plants) are stored as GLB files in public/office-assets/.",
+      "estimatedTime": 60,
+      "focusDirectory": "src/features/office",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "phaser-engine",
+          "name": "Phaser 3D Engine",
+          "color": "#06b6d4",
+          "items": [
+            { "path": "src/features/office/phaser", "type": "directory" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "fill"
+        },
+        {
+          "id": "office-panels",
+          "name": "Office UI Panels",
+          "color": "#10b981",
+          "items": [
+            { "path": "src/features/office/components/panels", "type": "directory" }
           ],
           "opacity": 0.7,
           "renderStrategy": "border"
@@ -136,15 +133,103 @@
       "interactiveActions": [
         {
           "type": "hover-directory",
-          "description": "Hover over .github to see the project configuration files",
-          "target": ".github"
+          "description": "Hover over the phaser directory to see the 3D rendering system",
+          "target": "src/features/office/phaser"
         }
       ]
     },
     {
-      "id": "step-6-whats-next",
+      "id": "step-5-gateway-and-server",
+      "title": "Gateway Proxy & Server",
+      "description": "The browser never connects directly to the OpenClaw Gateway. Everything flows through the Studio proxy for security:\n\n• server/ — Express server with gateway-proxy.js (WebSocket forwarding), access-gate.js (auth), network-policy.js (security), and studio-settings.js (local config)\n• src/lib/gateway/ — Client-side gateway abstraction with GatewayClient.ts, agent config, exec approvals, and error handling\n• src/app/api/gateway/ — Next.js API routes for agent-state, media, and skills\n\nThis layered proxy design keeps credentials server-side and allows flexible deployment.",
+      "estimatedTime": 45,
+      "focusDirectory": "server",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "server-proxy",
+          "name": "Server Proxy Layer",
+          "color": "#f97316",
+          "items": [
+            { "path": "server/gateway-proxy.js", "type": "file" },
+            { "path": "server/access-gate.js", "type": "file" },
+            { "path": "server/network-policy.js", "type": "file" },
+            { "path": "server/index.js", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "fill"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Click on gateway-proxy.js to see the WebSocket proxy",
+          "target": "server/gateway-proxy.js"
+        }
+      ]
+    },
+    {
+      "id": "step-6-shared-libraries",
+      "title": "Shared Libraries & Utilities",
+      "description": "The src/lib/ directory contains shared infrastructure used across the app:\n\n• office/ — Office state management, desk directives, presence, standup system, and event triggers\n• gateway/ — Gateway client and OpenClaw integration\n• agents/ — Avatar management\n• security/ — Permission sandboxing (see docs/permissions-sandboxing.md)\n• skills/ — Skill system integration\n• cron/ — Scheduled task support\n• ssh/, dom/, text/, uuid.ts — Low-level utilities\n\nThis is the connective tissue that links the features together.",
+      "estimatedTime": 45,
+      "focusDirectory": "src/lib",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "core-libs",
+          "name": "Core Libraries",
+          "color": "#6366f1",
+          "items": [
+            { "path": "src/lib/office", "type": "directory" },
+            { "path": "src/lib/gateway", "type": "directory" },
+            { "path": "src/lib/security", "type": "directory" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "fill"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "hover-directory",
+          "description": "Hover over the office library to see state management and event systems",
+          "target": "src/lib/office"
+        }
+      ]
+    },
+    {
+      "id": "step-7-testing-and-tooling",
+      "title": "Testing & Developer Tooling",
+      "description": "Claw3D uses a multi-layer testing strategy:\n\n• tests/unit/ — Unit tests with Vitest\n• tests/e2e/ — End-to-end tests with Playwright\n• vitest.config.ts & playwright.config.ts — Test configuration\n• scripts/ — Developer scripts for cleanup, smoke testing, and OpenClaw gateway sync\n• eslint.config.mjs — Linting rules\n• .env.example — Environment variable template for local setup\n\nBefore contributing: run lint, typecheck, and tests. Keep PRs focused — one topic per PR.",
+      "estimatedTime": 30,
+      "focusDirectory": "tests",
+      "colorMode": "fileTypes",
+      "highlightLayers": [
+        {
+          "id": "test-config",
+          "name": "Test Configuration",
+          "color": "#ec4899",
+          "items": [
+            { "path": "tests", "type": "directory" },
+            { "path": "vitest.config.ts", "type": "file" },
+            { "path": "playwright.config.ts", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Click on .env.example to see the required environment variables",
+          "target": ".env.example"
+        }
+      ]
+    },
+    {
+      "id": "step-8-whats-next",
       "title": "What's Next",
-      "description": "You've explored the Claw3D project! Here's where to go from here:\n\n• README.md — Quick start guide and full project overview\n• ARCHITECTURE.md — System boundaries and data flow\n• ROADMAP.md — Current priorities and good first contributions\n• CONTRIBUTING.md — Local setup and PR expectations\n\nThe project is early-stage and actively evolving. Check GitHub Issues for current work and Discussions for questions. Welcome to the team!",
+      "description": "You've explored the full Claw3D codebase! Here's where to go from here:\n\n• README.md — Quick start guide and project overview\n• ARCHITECTURE.md — System boundaries and data flow\n• ROADMAP.md — Current priorities and good first contributions\n• CONTRIBUTING.md — Local setup and PR expectations\n• CODE_DOCUMENTATION.md — Detailed code-level documentation\n• TUTORIAL.md — Step-by-step walkthrough\n\nThe project is early-stage and actively evolving. Check GitHub Issues for current work. Welcome to the team!",
       "estimatedTime": 20,
       "focusDirectory": "",
       "colorMode": "fileTypes",
@@ -160,8 +245,13 @@
           "type": "documentation"
         },
         {
-          "title": "Contributing Guide",
-          "url": "CONTRIBUTING.md",
+          "title": "Code Documentation",
+          "url": "CODE_DOCUMENTATION.md",
+          "type": "documentation"
+        },
+        {
+          "title": "Tutorial",
+          "url": "TUTORIAL.md",
           "type": "documentation"
         }
       ],
@@ -176,7 +266,7 @@
   "metadata": {
     "author": "Claw3D Community",
     "createdAt": "2026-03-17",
-    "updatedAt": "2026-03-17",
-    "tags": ["onboarding", "architecture", "getting-started"]
+    "updatedAt": "2026-03-20",
+    "tags": ["onboarding", "architecture", "getting-started", "source-code"]
   }
 }

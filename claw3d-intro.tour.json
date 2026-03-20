@@ -27,7 +27,7 @@
     {
       "id": "step-2-app-shell",
       "title": "Next.js Application Shell",
-      "description": "Built on Next.js App Router. Key routes:\n\npage.tsx / layout.tsx — Home screen and root layout.\n\noffice/ — The 3D workspace.\n\nagents/ — Fleet management and settings.\n\napi/ — Server-side routes for gateway, office, and studio.",
+      "description": "The app is built on Next.js App Router. Key routes:\n\npage.tsx — Home screen.\n\nlayout.tsx — Root layout wrapping the entire app.\n\noffice/ — The 3D workspace.\n\nagents/ — Fleet management and settings.\n\napi/ — Server-side routes for gateway, office, and studio.",
       "estimatedTime": 45,
       "focusDirectory": "src/app",
       "colorMode": "fileTypes",

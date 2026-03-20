@@ -27,7 +27,7 @@
     {
       "id": "step-2-app-shell",
       "title": "Next.js Application Shell",
-      "description": "The app is built on Next.js using the App Router. The home screen and root layout live at the top level of the app directory. From there, the main routes branch into the 3D office workspace, the agent fleet management and settings screens, and the server-side API routes that handle communication with the gateway, office state, and studio configuration.",
+      "description": "The app is built on Next.js using the App Router. The main routes branch into the 3D office workspace, agent fleet management, and server-side API routes for the gateway, office, and studio.",
       "estimatedTime": 45,
       "focusDirectory": "src/app",
       "colorMode": "fileTypes",
@@ -67,7 +67,7 @@
     {
       "id": "step-3-agent-system",
       "title": "Agent Management System",
-      "description": "The agent system is the heart of Claw3D. It manages the full lifecycle of AI agents, from creation and provisioning through to runtime operations and state management.\n\nThe components layer provides the user interface for agent chat, creation, inspection, skills, and the fleet sidebar. The approval system enforces human oversight through execution approval workflows with control loops and pause policies. Hooks and state management tie everything together.",
+      "description": "The agent system is the heart of Claw3D, managing the full lifecycle of AI agents from creation through runtime operations. The components layer provides the interface for agent chat, inspection, skills, and the fleet sidebar. The approval system enforces human oversight through execution workflows and pause policies.",
       "estimatedTime": 60,
       "focusDirectory": "src/features/agents",
       "colorMode": "fileTypes",
@@ -104,7 +104,7 @@
     {
       "id": "step-4-3d-office",
       "title": "The 3D Office",
-      "description": "The visual centerpiece of Claw3D is a Phaser-powered 3D office where agents sit at desks and collaborate. The rendering engine handles scenes, objects, overlays, and navigation throughout the space.\n\nThe office includes UI panels for analytics, inbox, playbooks, and a skills marketplace. There is also a retro-themed variant with its own furniture geometry and desk navigation routes. All 3D furniture models like desks, chairs, computers, and plants are stored as assets in the public directory.",
+      "description": "The visual centerpiece is a Phaser-powered 3D office where agents sit at desks and collaborate. The office includes panels for analytics, inbox, playbooks, and a skills marketplace. There is also a retro-themed variant with its own furniture and desk navigation. All 3D models like desks, chairs, and computers are stored as assets in the public directory.",
       "estimatedTime": 60,
       "focusDirectory": "src/features/office",
       "colorMode": "fileTypes",
@@ -141,7 +141,7 @@
     {
       "id": "step-5-gateway-and-server",
       "title": "Gateway Proxy and Server",
-      "description": "The browser never talks directly to the OpenClaw Gateway. Everything flows through the Studio proxy for security and deployment flexibility.\n\nThe server layer is an Express application that handles WebSocket forwarding, authentication gating, and network policy enforcement. On the client side, a gateway abstraction manages the connection and error handling. The API routes provide endpoints for agent state, media, and skills.",
+      "description": "The browser never talks directly to the OpenClaw Gateway. Everything flows through the Studio proxy for security. The server handles WebSocket forwarding, authentication, and network policy. On the client side, a gateway abstraction manages the connection and error handling.",
       "estimatedTime": 45,
       "focusDirectory": "server",
       "colorMode": "fileTypes",
@@ -171,7 +171,7 @@
     {
       "id": "step-6-shared-libraries",
       "title": "Shared Libraries and Utilities",
-      "description": "The shared libraries are the connective tissue that links the features together. The office library handles state management, presence tracking, standups, and event triggers. The gateway library manages the client connection to OpenClaw.\n\nThere are also dedicated libraries for the skill system, agent avatars, and scheduled tasks. The security library handles permission sandboxing to keep agent actions safe and controlled.",
+      "description": "The shared libraries link the features together. The office library handles state management, presence, and event triggers. The gateway library manages the connection to OpenClaw. There are also libraries for skills, avatars, and scheduling. The security library handles permission sandboxing to keep agent actions safe.",
       "estimatedTime": 45,
       "focusDirectory": "src/lib",
       "colorMode": "fileTypes",
@@ -200,7 +200,7 @@
     {
       "id": "step-7-testing-and-tooling",
       "title": "Testing and Developer Tooling",
-      "description": "Claw3D uses a multi-layer testing strategy. Unit tests are powered by Vitest, and end-to-end tests run through Playwright to verify the full user experience.\n\nThe scripts directory contains developer helpers for cleanup, smoke testing the dev server, and syncing with the OpenClaw gateway. An environment variable template is included to help new contributors get their local setup running quickly.",
+      "description": "Claw3D uses a multi-layer testing strategy. Unit tests are powered by Vitest, and end-to-end tests run through Playwright. Developer scripts handle cleanup, smoke testing, and gateway syncing. An environment variable template helps new contributors get set up quickly.",
       "estimatedTime": 30,
       "focusDirectory": "tests",
       "colorMode": "fileTypes",

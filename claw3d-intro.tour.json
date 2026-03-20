@@ -27,7 +27,7 @@
     {
       "id": "step-2-app-shell",
       "title": "Next.js Application Shell",
-      "description": "The app is built on Next.js with the App Router. The main entry points are:\n\n• page.tsx — Home screen and landing page\n• layout.tsx — Root layout wrapping the entire app\n• office/ — The 3D office workspace route\n• agents/ — Agent fleet management and settings\n• api/ — Server-side API routes for gateway, office, and studio\n\nThe [..invalid] catch-all route handles unknown paths gracefully.",
+      "description": "Built on Next.js App Router. Key routes:\n\n• page.tsx / layout.tsx — Home screen and root layout\n• office/ — The 3D workspace\n• agents/ — Fleet management and settings\n• api/ — Server-side routes for gateway, office, and studio",
       "estimatedTime": 45,
       "focusDirectory": "src/app",
       "colorMode": "fileTypes",
@@ -67,7 +67,7 @@
     {
       "id": "step-3-agent-system",
       "title": "Agent Management System",
-      "description": "The agent system is the heart of Claw3D. It handles the full lifecycle of AI agents:\n\n• components/ — UI for agent chat, creation, inspection, skills, and fleet sidebar\n• approvals/ — Execution approval workflows with control loops and pause policies\n• operations/ — Agent runtime operations\n• state/ — Agent state management\n• hooks/ — React hooks for agent interactions\n• creation/ — Agent provisioning and setup\n\nAgents communicate through the OpenClaw Gateway, with approvals ensuring human oversight of agent actions.",
+      "description": "The heart of Claw3D — managing the full agent lifecycle:\n\n• components/ — Chat, creation, inspection, skills, and fleet sidebar\n• approvals/ — Execution approval workflows with control loops and pause policies\n• operations/ & state/ — Runtime operations and state management\n• hooks/ & creation/ — React hooks and agent provisioning",
       "estimatedTime": 60,
       "focusDirectory": "src/features/agents",
       "colorMode": "fileTypes",
@@ -104,7 +104,7 @@
     {
       "id": "step-4-3d-office",
       "title": "The 3D Office",
-      "description": "The visual centerpiece: a Phaser-powered 3D office where agents sit at desks, collaborate, and work. The office system includes:\n\n• phaser/ — Rendering engine with scenes, objects, overlays, and navigation systems\n• components/ — Office UI panels: analytics, inbox, history, playbooks, skills marketplace, and settings\n• hooks/ — Office-specific logic like standup controllers and usage analytics\n• retro-office/ — The retro-themed 3D variant with furniture geometry, desk navigation routes, and persistence\n\n3D furniture models (desks, chairs, computers, plants) are stored as GLB files in public/office-assets/.",
+      "description": "A Phaser-powered 3D office where agents sit at desks and collaborate:\n\n• phaser/ — Rendering engine with scenes, objects, overlays, and navigation\n• components/ — UI panels for analytics, inbox, playbooks, skills marketplace\n• retro-office/ — Retro-themed variant with furniture geometry and desk routes\n\n3D furniture models (GLB) live in public/office-assets/.",
       "estimatedTime": 60,
       "focusDirectory": "src/features/office",
       "colorMode": "fileTypes",
@@ -141,7 +141,7 @@
     {
       "id": "step-5-gateway-and-server",
       "title": "Gateway Proxy & Server",
-      "description": "The browser never connects directly to the OpenClaw Gateway. Everything flows through the Studio proxy for security:\n\n• server/ — Express server with gateway-proxy.js (WebSocket forwarding), access-gate.js (auth), network-policy.js (security), and studio-settings.js (local config)\n• src/lib/gateway/ — Client-side gateway abstraction with GatewayClient.ts, agent config, exec approvals, and error handling\n• src/app/api/gateway/ — Next.js API routes for agent-state, media, and skills\n\nThis layered proxy design keeps credentials server-side and allows flexible deployment.",
+      "description": "The browser never talks directly to the OpenClaw Gateway — everything flows through the Studio proxy:\n\n• server/ — Express server with WebSocket forwarding, auth gate, and network policy\n• src/lib/gateway/ — Client-side gateway abstraction and error handling\n• src/app/api/gateway/ — API routes for agent-state, media, and skills",
       "estimatedTime": 45,
       "focusDirectory": "server",
       "colorMode": "fileTypes",
@@ -171,7 +171,7 @@
     {
       "id": "step-6-shared-libraries",
       "title": "Shared Libraries & Utilities",
-      "description": "The src/lib/ directory contains shared infrastructure used across the app:\n\n• office/ — Office state management, desk directives, presence, standup system, and event triggers\n• gateway/ — Gateway client and OpenClaw integration\n• agents/ — Avatar management\n• security/ — Permission sandboxing (see docs/permissions-sandboxing.md)\n• skills/ — Skill system integration\n• cron/ — Scheduled task support\n• ssh/, dom/, text/, uuid.ts — Low-level utilities\n\nThis is the connective tissue that links the features together.",
+      "description": "Shared infrastructure in src/lib/ that connects the features:\n\n• office/ — State management, presence, standups, and event triggers\n• gateway/ — Gateway client and OpenClaw integration\n• security/ — Permission sandboxing\n• skills/, cron/, agents/ — Skill system, scheduling, and avatars",
       "estimatedTime": 45,
       "focusDirectory": "src/lib",
       "colorMode": "fileTypes",
@@ -200,7 +200,7 @@
     {
       "id": "step-7-testing-and-tooling",
       "title": "Testing & Developer Tooling",
-      "description": "Claw3D uses a multi-layer testing strategy:\n\n• tests/unit/ — Unit tests with Vitest\n• tests/e2e/ — End-to-end tests with Playwright\n• vitest.config.ts & playwright.config.ts — Test configuration\n• scripts/ — Developer scripts for cleanup, smoke testing, and OpenClaw gateway sync\n• eslint.config.mjs — Linting rules\n• .env.example — Environment variable template for local setup\n\nBefore contributing: run lint, typecheck, and tests. Keep PRs focused — one topic per PR.",
+      "description": "Multi-layer testing and dev tooling:\n\n• tests/unit/ — Vitest unit tests\n• tests/e2e/ — Playwright end-to-end tests\n• scripts/ — Cleanup, smoke testing, and gateway sync helpers\n• .env.example — Environment variable template for local setup",
       "estimatedTime": 30,
       "focusDirectory": "tests",
       "colorMode": "fileTypes",

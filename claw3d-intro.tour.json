@@ -171,7 +171,7 @@
     {
       "id": "step-6-shared-libraries",
       "title": "Shared Libraries & Utilities",
-      "description": "Shared infrastructure in src/lib/ that connects the features.\n\noffice/ — State management, presence, standups, and event triggers.\n\ngateway/ — Gateway client and OpenClaw integration.\n\nsecurity/ — Permission sandboxing.\n\nskills/, cron/, agents/ — Skill system, scheduling, and avatars.",
+      "description": "Shared infrastructure in src/lib/ that connects the features.\n\noffice/ — State management, presence, standups, and event triggers.\n\ngateway/ — Gateway client and OpenClaw integration.\n\nThe security directory handles permission sandboxing.\n\nskills/, agents/, cron/ — Skill system, avatars, and scheduling.",
       "estimatedTime": 45,
       "focusDirectory": "src/lib",
       "colorMode": "fileTypes",
@@ -200,7 +200,7 @@
     {
       "id": "step-7-testing-and-tooling",
       "title": "Testing & Developer Tooling",
-      "description": "Multi-layer testing and dev tooling.\n\ntests/unit/ — Vitest unit tests.\n\ntests/e2e/ — Playwright end-to-end tests.\n\nscripts/ — Cleanup, smoke testing, and gateway sync helpers.\n\n.env.example — Environment variable template for local setup.",
+      "description": "Multi-layer testing and dev tooling.\n\ntests/unit/ — Vitest unit tests.\n\ntests/e2e/ — Playwright end-to-end tests.\n\nscripts/ — Cleanup, smoke testing, and gateway sync helpers.\n\nThe env example file is the environment variable template for local setup.",
       "estimatedTime": 30,
       "focusDirectory": "tests",
       "colorMode": "fileTypes",
